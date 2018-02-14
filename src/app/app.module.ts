@@ -3,16 +3,39 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { SelectTeamComponent } from './select-team/select-team.component';
+import { SelectUserComponent } from './select-user/select-user.component';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { SurveyComponent } from './survey/survey.component';
+import {Routes, RouterModule} from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import {DataService} from './data.service';
+import {HttpModule} from '@angular/http';
 
-
+const appRoutes: Routes = [
+  {path: '', redirectTo: 'team', pathMatch: 'full'},
+  { path: 'team', component: SelectTeamComponent },
+  { path: 'user',      component: SelectUserComponent },
+  { path: 'admin-panel',      component: AdminPanelComponent },
+  { path: 'survey', component: SurveyComponent },
+];
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SelectTeamComponent,
+    SelectUserComponent,
+    AdminPanelComponent,
+    SurveyComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    HttpModule,
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

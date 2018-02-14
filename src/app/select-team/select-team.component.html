@@ -1,0 +1,45 @@
+
+
+
+<div class="container-contact100">
+  <div class="wrap-contact100">
+    <div  class="contact100-form ">
+				<span class="contact100-form-title">
+				Login
+				</span>
+
+
+
+      <div class="wrap-input100">
+        <div class="label-input100">Step 1</div>
+        <br>
+        <div>
+          <select class="input100 form-control" name="service">
+            <option>Please select your team</option>
+            <option *ngFor="let team of teams" >{{ team.name }}</option>
+          </select>
+          <div class="dropDownSelect2"></div>
+        </div>
+        <span class="focus-input100"></span>
+      </div>
+
+
+
+      <div class="container-contact100-form-btn">
+        <button class="contact100-form-btn" routerLink="/user">
+          Next
+        </button>
+      </div>
+
+
+    </div>
+
+    <div class="contact100-more flex-col-c-m" style="background-image: url('../../assets/images/bg-01.jpg');">
+    </div>
+  </div>
+</div>
+
+
+
+
+
