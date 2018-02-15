@@ -5,31 +5,31 @@
   <div class="wrap-contact100">
     <div  class="contact100-form ">
 				<span class="contact100-form-title">
-				Login
+			Select your team
 				</span>
 
 
 
       <div class="wrap-input100">
-        <div class="label-input100">Step 1</div>
+        <div class="label-input100">Please select your team</div>
+
         <br>
-        <div>
-          <select class="input100 form-control" name="service">
-            <option>Please select your team</option>
-            <option *ngFor="let team of teams" >{{ team.name }}</option>
+        <form [formGroup]="teamForm" (ngSubmit)="selectTeam(team.value)">
+
+          <select  class="input100 form-control" name="team"  formControlName="team" #team>
+            <option *ngFor="let team of teams" [value]="team.id" >{{ team.name }}</option>
           </select>
           <div class="dropDownSelect2"></div>
-        </div>
+          <div class="container-contact100-form-btn">
+            <input type="submit" class="contact100-form-btn" value="Next"  [disabled]="!teamForm.valid">
+          </div>
+        </form>
         <span class="focus-input100"></span>
       </div>
 
 
 
-      <div class="container-contact100-form-btn">
-        <button class="contact100-form-btn" routerLink="/user">
-          Next
-        </button>
-      </div>
+
 
 
     </div>

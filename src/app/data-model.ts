@@ -18,3 +18,16 @@ export class User {
     public FK_ROLE: number
   ) { }
 }
+export class Question {
+  constructor(
+    public id: number,
+    public question: string,
+    public FK_TEAM: number
+  ) {}
+}
+export class GradeQuest {
+  constructor(
+    public questNum: number,
+    public grade: string
+  ){}
+}

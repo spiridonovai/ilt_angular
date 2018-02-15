@@ -5,7 +5,7 @@
   <div class="wrap-contact100">
     <div  class="contact100-form ">
 				<span class="contact100-form-title">
-				Login
+				Select your username
 				</span>
 
 
@@ -14,21 +14,18 @@
         <div class="label-input100">Step 2</div>
         <br>
         <div>
-          <select class="input100 form-control" name="service">
-            <option>Please select your username</option>
-            <option *ngFor="let user of users" >{{ user.name }} {{user.surname}}</option>
-          </select>
-          <div class="dropDownSelect2"></div>
-        </div>
-        <span class="focus-input100"></span>
+          <form  [formGroup]="userForm"(ngSubmit)="selectUser(user.value)">
+
+            <select  class="input100 form-control"  formControlName="user" name="user" #user>
+              <option *ngFor="let user of users" [value]="user" >{{ user.name}} {{user.surname}}</option>
+            </select>
+            <div class="dropDownSelect2"></div>
+            <div class="container-contact100-form-btn">
+              <input type="submit" class="contact100-form-btn" value="Next" [disabled]="!userForm.valid">
+            </div>
+          </form>
       </div>
 
-
-
-      <div class="container-contact100-form-btn">
-        <button class="contact100-form-btn" routerLink="/survey">
-          Next
-        </button>
       </div>
 
 

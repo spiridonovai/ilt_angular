@@ -12,13 +12,15 @@ import {HttpClientModule} from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import {DataService} from './data.service';
 import {HttpModule} from '@angular/http';
+import { FormsModule } from '@angular/forms';
+// import { D3Service } from 'd3-ng2-service';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: 'team', pathMatch: 'full'},
   { path: 'team', component: SelectTeamComponent },
-  { path: 'user',      component: SelectUserComponent },
+  { path: 'user/:id',      component: SelectUserComponent },
   { path: 'admin-panel',      component: AdminPanelComponent },
-  { path: 'survey', component: SurveyComponent },
+  { path: 'survey/:id', component: SurveyComponent },
 ];
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ const appRoutes: Routes = [
     BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
