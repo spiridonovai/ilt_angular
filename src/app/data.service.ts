@@ -17,6 +17,7 @@ export class DataService {
   private teamsUrl = 'http://u7dev-env-loadbalance.eu-central-1.elasticbeanstalk.com/api/member/team';
   private usersUrl = 'http://u7dev-env-loadbalance.eu-central-1.elasticbeanstalk.com/api/member/team';
   private questUrl = 'http:// u7dev-env-loadbalance.eu-central-1.elasticbeanstalk.com/api/member/team';
+  private chartUrl = 'http:// u7dev-env-loadbalance.eu-central-1.elasticbeanstalk.com/charts';
   private tmpurl = '/questions';
   public questionstmp: Question[] = [
     {
@@ -45,12 +46,34 @@ export class DataService {
       FK_TEAM: 1,
     }
   ];
+  public barChartData = [{
+    id: 1, // number
+    label: 'label name',  // string
+    value1: 1, // number
+  },
+    {
+      id: 2, // number
+      label: 'label2 name',  // string
+      value1: 2, // number
+  },
+    {
+      id: 1, // number
+      label: 'label3 name',  // string
+      value1: 3, // number
+    } ];
+  getBarData(): any[] {
+    return this.barChartData;
+  }
   constructor(private _http: HttpClient) { }
 
   getTeams(): Observable<Team[]>  {
     return this._http.get<Team[]>(this.teamsUrl).pipe(
       catchError(this.handleError('getTeams', [])));
   }
+  // getCharts() {
+  //   return this._http.get(this.chartUrl).pipe(
+  //     catchError(this.handleError('getCharts', [])));
+  // }
   getUsersOfTeam(team: number): Observable<User[]> {
     const url = `${this.usersUrl}/${team}`;
     return this._http.get<User[]>(url).pipe(

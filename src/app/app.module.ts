@@ -19,7 +19,7 @@ const appRoutes: Routes = [
   {path: '', redirectTo: 'team', pathMatch: 'full'},
   { path: 'team', component: SelectTeamComponent },
   { path: 'user/:id',      component: SelectUserComponent },
-  { path: 'admin-panel',      component: AdminPanelComponent },
+  { path: 'team/admin-panel',      component: AdminPanelComponent },
   { path: 'survey/:id', component: SurveyComponent },
 ];
 @NgModule({
