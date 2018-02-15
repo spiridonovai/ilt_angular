@@ -18,7 +18,10 @@ export class SurveyComponent implements OnInit {
     this.service.getQuestionsOfTeam(this.id).subscribe(questions => this.questions = questions);
     console.log(this.questions);
   }
-
+addAnswers()
+{
+  this.router.navigate(['team']);
+}
   ngOnInit() {
   }
 

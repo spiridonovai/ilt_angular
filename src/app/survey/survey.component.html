@@ -1,46 +1,48 @@
 <div class="container-contact100">
-  <div class="wrap-contact100">
+  <div >
 
 
 
-      <div class="wrap-input100" *ngFor="let question of questions">
+    <form (ngSubmit)="addAnswers()">
+      <div  *ngFor="let question of questions">
+        <br><br>
           <span class="contact100-form-title">{{question.question}}</span>
-
-          <input style="margin-left:50% "  id="radio1" type="radio" name="grade" value="1" required="required">
-          <label style="margin-left:50%"  for="radio1">
+        <br>
+          <input style="margin-left: 150px" id="radio1" type="radio" name="grade" value="1" required="required">
+          <label style="display: inline-block; margin-right: 150px;" for="radio1">
             1
           </label>
 
 
 
-          <input style="margin-left:50%" id="radio2" type="radio" name="grade" value="2">
-          <label style="margin-left:50%" for="radio2">
+          <input  id="radio2" type="radio" name="grade" value="2">
+          <label style="display: inline-block; margin-right: 150px;" for="radio2">
             2
           </label>
 
 
 
-          <input style="margin-left:50%"  id="radio3" type="radio" name="grade" value="3">
-          <label  style="margin-left:50%" for="radio3">
+          <input   id="radio3" type="radio" name="grade" value="3">
+          <label style="display: inline-block; margin-right: 150px;" for="radio3">
             3
           </label>
 
 
-          <input style="margin-left:50%"  id="radio4" type="radio" name="grade" value="4">
-          <label style="margin-left:50%" for="radio4">
+          <input   id="radio4" type="radio" name="grade" value="4">
+          <label style="display: inline-block; margin-right: 150px;"for="radio4">
             4
           </label>
 
 
-          <input  style="margin-left:50%" id="radio5" type="radio" name="grade" value="5">
-          <label style="margin-left:50%" for="radio5">
+          <input   id="radio5" type="radio" name="grade" value="5">
+          <label style="display: inline-block; margin-right: 150px;" for="radio5">
             5
           </label>
         </div>
     <div class="container-contact100-form-btn">
       <input type="submit" class="contact100-form-btn" value="Save">
     </div>
-
+    </form>
       </div>
 
 
